@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A Final Note</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=Inter:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+  :root{
+    --bg-1:#06070d;
+    --bg-2:#0c0e1c;
+    --glass: rgba(255,255,255,0.055);
+    --glass-hi: rgba(255,255,255,0.09);
+    --glass-border: rgba(255,255,255,0.14);
+    --ink:#f4f2ee;
+    --ink-soft:#a7acc2;
+    --ink-faint:#6c7189;
+    --accent:#8b7cff;
+    --accent-2:#5cc3ff;
+  }
+  *{box-sizing:border-box;}
+  html{color-scheme:dark;}
+  body{
+    margin:0;
+    min-height:100vh;
+    background:var(--bg-1);
+    color:var(--ink);
+    font-family:"Inter", -apple-system, "Segoe UI", sans-serif;
+    -webkit-font-smoothing:antialiased;
+    position:relative;
+    overflow-x:hidden;
+  }
+  @media (prefers-reduced-motion: reduce){
+    *{animation-duration:.001ms !important; transition-duration:.001ms !important;}
+  }
+
+  .glow{
+    position:fixed; inset:0; z-index:0; pointer-events:none;
+    background:
+      radial-gradient(560px 420px at 18% -6%, rgba(139,124,255,.30), transparent 60%),
+      radial-gradient(640px 480px at 88% 8%, rgba(92,195,255,.20), transparent 60%),
+      radial-gradient(700px 520px at 50% 100%, rgba(139,124,255,.14), transparent 60%);
+  }
+  .grain{
+    position:fixed; inset:0; z-index:0; pointer-events:none; opacity:.035; mix-blend-mode:overlay;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  .page{
+    position:relative; z-index:1;
+    min-height:100vh;
+    display:flex; align-items:center; justify-content:center;
+    padding:56px 20px;
+  }
+
+  .eyebrow{
+    display:inline-flex; align-items:center; gap:.6em;
+    font-family:"IBM Plex Mono", monospace;
+    font-size:.72rem; letter-spacing:.18em; text-transform:uppercase;
+    color:var(--accent-2);
+  }
+  .eyebrow::before{content:""; width:6px; height:6px; border-radius:50%; background:var(--accent-2); box-shadow:0 0 10px var(--accent-2);}
+
+  .letter{
+    max-width:600px;
+    width:100%;
+    background:linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.045));
+    border:1px solid var(--glass-border);
+    border-radius:20px;
+    padding:44px 40px 36px;
+    box-shadow:0 30px 80px rgba(0,0,0,.55);
+    backdrop-filter:blur(18px);
+    -webkit-backdrop-filter:blur(18px);
+  }
+  h1{
+    font-family:"Sora", "Segoe UI", sans-serif;
+    font-weight:800;
+    font-size:clamp(1.7rem, 1.3rem + 1.6vw, 2.3rem);
+    margin:16px 0 0;
+    line-height:1.15;
+  }
+  .rule{height:3px; width:56px; margin:20px 0 28px; border-radius:2px; background:linear-gradient(90deg, var(--accent), var(--accent-2));}
+  .letter-body{font-size:1.05rem; line-height:1.72; color:var(--ink-soft);}
+  .letter-body p{margin:0 0 18px;}
+  .letter-body p:last-child{margin-bottom:0;}
+
+  .signoff{margin:34px 0 0; font-size:.98rem; color:var(--ink-soft);}
+  .signature{display:block; margin-top:8px; font-family:"Sora",sans-serif; font-weight:700; font-size:1.4rem; color:var(--ink);}
+
+  .contact{margin-top:22px; padding-top:22px; border-top:1px solid var(--glass-border); font-size:.92rem; color:var(--ink-faint); font-family:"IBM Plex Mono", monospace;}
+  .contact a{color:var(--accent-2); text-decoration:none; border-bottom:1px solid rgba(92,195,255,.35);}
+  .contact a:hover{border-bottom-color:var(--accent-2);}
+  .contact div{margin-bottom:8px;}
+  .contact div:last-child{margin-bottom:0;}
+
+  @media (max-width:520px){
+    .letter{padding:32px 24px 28px;}
+  }
+</style>
+</head>
+<body>
+
+<div class="glow" aria-hidden="true"></div>
+<div class="grain" aria-hidden="true"></div>
+
+<div class="page">
+  <div class="letter">
+    <span class="eyebrow">Last Day at GE</span>
+    <h1>A Final Note</h1>
+    <div class="rule" aria-hidden="true"></div>
+    <div class="letter-body">
+      <p>After 6 years at GE, it's time for me to move on.</p>
+      <p>It started on ZFP, with a first team that made a new place feel like home. It moved to AW and ISV, through new products, new people, VRRs, releases and more late evenings than I can count. Along the way, I grew from someone learning the ropes into someone trusted to build and lead, and that happened because of the people around me.</p>
+      <p>To everyone who answered my questions, however basic, thank you. To everyone who reviewed my work and made it better, thank you. To the fun activities crew, the brown bag regulars and everyone who made the office feel like more than a workplace, thank you. And to the person who took a chance and hired me in the first place, none of this happens without you.</p>
+      <p>I'm leaving with a lot of lessons, a lot of stories and a lot of friends. I'll carry all of them with me.</p>
+    </div>
+    <p class="signoff">Until our paths cross again,
+      <span class="signature">Haricharan</span>
+    </p>
+    <div class="contact">
+      <div>&#128231; <a href="mailto:haricharan.boganatham@gmail.com">haricharan.boganatham@gmail.com</a></div>
+      <div>&#128279; <a href="https://www.linkedin.com/in/haricharan-boganatham/" target="_blank" rel="noopener">linkedin.com/in/haricharan-boganatham</a></div>
+      <div>&#128222; <a href="tel:+919176801515">+91 91768 01515</a></div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
